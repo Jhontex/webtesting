@@ -1,0 +1,452 @@
+/* Estilos genereales aplicados ; La página se construye utilizando las medidas relativas em y %
+;Los estilos se van declarando desde las pantallas mas pequeñas hasta la mas grandes */ 
+
+*{margin: 0;padding: 0;}
+
+body{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
+	min-height: 480px;
+	font-size: 16px;
+	font-family: arial;
+}
+
+h1{font-size:1.5em;}
+
+h1,h2,h3{text-align: center;}
+
+p{text-align: justify}
+
+a{text-decoration: none;color: #000;}
+
+figure{width: 100%;height: 100%;}
+
+img{width: 100%;height: 100%;}
+
+/* Aquí se empieza a declarar los estilo a partir de una anchura de 300px */
+
+@media only screen and (min-width: 300px){
+
+	/* El siguiente query se aplica para lo que es la cabezera de la página hasta una anchura de 600px */
+	@media only screen and (max-width: 699px){
+
+		header{
+			position: fixed;
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			flex-direction: row;
+			height: 10%;
+			width: 100%;
+			z-index: 20;
+			background: rgba(255,255,255,.8);
+		}
+
+		header > figure{
+			width: 14.062em;
+			height: 100%;
+		}
+
+		nav{
+			width: 3.5em;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		nav *{color: #fff;}
+
+		nav > figure{
+			height: 100%;
+			width: 100%;
+			padding: .2em;
+			box-sizing: border-box;
+		}
+
+		nav > ul{
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			top: 100%;
+			width: 10em;
+			height: 10em;
+			right: -10em;
+			transition: right 500ms ease-out;
+			background: rgba(255,150,0,.95);
+		}
+
+		nav:hover > ul{right: 0;transition: 500ms ease-out;}
+
+		nav > ul > li{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 25%;
+			width: 100%;
+		}
+		
+	
+		nav > ul > li > #SubMenu{
+			position: absolute;
+			right: 100%;
+			width: 100%;
+			height: 12em;
+			top: 50%;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			background: rgba(14,199,239,.95);
+		}
+
+		#SubMenu > li{
+			display: block;
+			width: 100%;
+			height: 20%;
+		}
+
+		#SubMenu > li > *{
+			display: flex;
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+		}
+
+		/* Despliegue de los menus */
+		nav:hover > ul{display: flex;}
+		#Catalogo:hover > #SubMenu{display: flex;}
+
+		@media only screen and (min-width: 450px){
+			nav > ul{
+				font-size: 17px;
+			}
+		}
+	}
+
+	header{box-shadow: 0em .5em 1em #000;}
+
+	#ContenedorGeneral{
+		position: absolute;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		width: 100%;
+		top: 73%;
+	}
+
+	#ContenedorGeneral > #IconosProductos{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+
+	#ContenedorGeneral > #IconosProductos > div{
+		width: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: .2em;
+		box-sizing: border-box;
+	}
+
+
+	#ContenedorGeneral > #IconosProductos > div > figure{
+		width: 5.2em;
+		height: 5.2em;
+		background: #c5c5c5;
+		border-radius: 100%;
+		transition: background 500ms ease-out;
+	}
+
+	#ContenedorGeneral > #IconosProductos > div >figure:hover{
+		background: #FA9F00;
+		transition: background 500ms ease-out;
+	}
+
+	main{
+		width: 100%;
+	}
+	
+	main > section{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	main > section > *:not(h2){
+		width: 20em;
+		padding: .5em;
+		box-sizing: border-box;
+	}
+
+	main > section > .Informacion{
+		font-size: 1em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		background: rgba(255,255,255,.6);
+	}
+
+	main > section:first-child > .ImagenVideo > figure{
+		border-radius: 100%;
+		width: 10em;
+		height: 10em;
+		padding: .5em;
+		box-sizing: border-box;
+		margin: auto;
+		border: solid #DD7902 .4em;
+		background: #fff;
+	}
+
+
+
+	main > section[id="Productos"] > div{
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;		
+	}
+
+	main > section[id="Productos"] > h2{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 1.5em;
+	}
+
+	main > section[id="Productos"] > div > div{
+		width: 50%;
+		padding: .2em;
+		box-sizing: border-box;
+	}
+
+	main > section[id="Productos"] > div > div > figure{
+		width: 7em;
+		height: 7em;
+		margin: auto;
+		border: solid #E36B00 .2em;
+		border-radius: 10%;
+		padding: .5em;
+		box-sizing: border-box;
+		transition: all 500ms ease-out;
+	}
+
+	main > section[id="Productos"] > div > div > figure:hover{
+		width: 6em;
+		height: 6em;
+		transition: all 500ms ease-out;
+	}
+
+	footer{
+		width: 100%;
+		background: #913D00;
+		color: #fff;
+	}
+
+	footer > figure{height: 4em;background: rgba(255,255,255,.8);}
+
+	footer > *:not(#Copyright){width: 20em;margin: auto; text-align: center;}
+
+	footer > #Copyright{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 3em;
+		background: #EA800E;
+		margin: auto;
+	}
+}
+
+@media only screen and (min-width: 450px){
+	#ContenedorGeneral{
+		top: 78%;
+	}
+}
+
+@media only screen and (min-width: 460px){
+
+	#ContenedorGeneral > #IconosProductos{
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#ContenedorGeneral > #IconosProductos > div{
+		width: unset;
+	}
+}
+
+@media only screen and (min-width: 600px){
+	#ContenedorGeneral{
+		top: 83.5%;
+	}
+
+	main > section[id="Productos"] > div{
+		flex-wrap: nowrap;
+		
+	}
+}
+
+@media only screen and (min-width: 650px){
+	main > section{
+		flex-direction: row;
+		height: 20em;
+	}
+
+	main > section > .Informacion{
+		height: 100%;
+	}
+}
+
+@media only screen and (min-width: 700px){
+
+	header{
+		position: fixed;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: row;
+		height: 10%;
+		width: 100%;
+		z-index: 20;
+		background: rgba(255,255,255,.8);
+	}
+
+	header > figure{
+		width: 14.062em;
+		height: 100%;
+	}
+
+	nav{
+		width: 50%;
+		height: 100%;
+	}
+
+	nav > figure{display: none;}
+
+	nav > ul{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row;
+		width: 100%;
+		height: 100%;
+		list-style: none;
+	}
+
+	nav > ul > li{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 25%;
+		height: 100%;
+		font-size: 16px;
+		text-align: center;
+		border-bottom: .2em solid #c5c5c5;
+		box-sizing: border-box;
+		transition: border-bottom 500ms ease-out;
+	}
+
+	nav > ul > li:hover{
+		border-bottom: 1.2em solid #0AD40F;
+		transition: border-bottom 500ms ease-out;
+	}
+
+
+
+	#SubMenu{
+		position: absolute;
+		display: none;
+		top: 100%;
+		width: 10em;
+		height: 15em;
+		background: rgba(255,255,255,.9);
+	}
+	
+	#SubMenu > li{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 20%;
+		width: 100%;
+		border-bottom: 0em solid #c5c5c5;
+		box-sizing: border-box;
+		transition: border-bottom 500ms ease-out;
+	}
+
+	#SubMenu > li:hover{
+		border-bottom: .6em solid #0092DE;
+		transition: border-bottom 500ms ease-out;
+	}
+
+	#Catalogo:hover > #SubMenu{display: block;}
+	
+	footer > *:not(#Copyright){margin-left:1%;text-align: left;}
+}
+
+@media only screen and (min-width: 900px){
+
+	#ContenedorGeneral > #IconosProductos{
+		width: 100%;
+		height: 20%;
+	}
+
+	#ContenedorGeneral > #IconosProductos > div > figure{
+		width: 5.5em;
+		height: 5.5em;
+	}
+}
+
+
+@media only screen and (min-width: 950px){
+
+	header > figure{
+		width: 16em;
+	}
+
+	main > section{
+		height: 22em;
+	}
+
+	main > section > *:not(h2){
+		width: 23em;
+	}
+
+		main > section[id="Productos"] > div > div > figure{
+		width: 8em;
+		height: 8em;
+	}
+}
+
+@media only screen and (min-width: 1200px){
+	body{
+		font-size: 17px;
+	}
+
+
+	main > section[id="Productos"] > div > div{
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 1300px){
+	body{
+		font-size: 17.2px;
+	}
+}
