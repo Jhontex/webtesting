@@ -10,7 +10,6 @@ se encuentran adentro de el */
 	top: 10%;
 	width: 100%;
 	height: 55%;
-	overflow: hidden;
 }
 
 #Slider > #ImagenesSlider{
@@ -35,6 +34,7 @@ se encuentran adentro de el */
 	justify-content: center;
 	flex-direction: column;
 	flex-wrap: wrap;
+	overflow: hidden;
 }
 
 
