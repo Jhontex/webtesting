@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: *
+Allow: /
+Sitemap: http://serviagrosol.com.ve/Sitemap.xml
