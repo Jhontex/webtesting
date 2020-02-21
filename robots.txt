@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
 Sitemap: http://serviagrosol.com.ve/Sitemap.xml
+
+User-agent: *
+Disallow: /Imagenes
