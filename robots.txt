@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /Imagenes/
-Sitemap: http://serviagrosol.com.ve/Sitemap.xml
+Sitemap: http://serviagrosol.com.ve/sitemap.xml
 
 User-agent: Googlebot-Image
 Disallow: /
